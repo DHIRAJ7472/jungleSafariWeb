@@ -1,0 +1,46 @@
+﻿@model jungleSafariWeb.ViewModel.GateView
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 style="margin-top:50px" class="container body-content text-center font-weight-bold bg-light">Delete Gate</h2>
+
+<div class="container body-content bg-light">
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Gate</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ParkId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ParkId)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="hidden" value=@Model.GateId name="GateId" id="GateId" />
+        <input type="hidden" value=@Model.ParkId name="ParkId" id="ParkId" />
+        <input type="submit" value="Delete" class="btn btn-default" />
+        @Html.ActionLink("Back to GateList", "IndexUp", new { id = Model.GateId })
+    </div>
+        }
+    </div>
+</div>

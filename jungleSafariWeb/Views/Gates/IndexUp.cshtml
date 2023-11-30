@@ -1,0 +1,43 @@
+﻿@model IEnumerable<jungleSafariWeb.ViewModel.GateView>
+
+@{
+    ViewBag.Title = "IndexUp";
+}
+
+<h2 style="margin-top:150px" class="container body-content text-center font-weight-bold bg-light">Update Gate Data</h2>
+
+<div class="container body-content bg-light">
+
+    <p>
+        @Html.ActionLink("Create New", "Create", new { id = @Model.First().ParkId });
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GateId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GateId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.GateId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.GateId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.GateId })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,66 @@
+﻿@model jungleSafariWeb.Models.Booking
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gate.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gate.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Park.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Park.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SafariDetail.SafariName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SafariDetail.SafariName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.VType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.VType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

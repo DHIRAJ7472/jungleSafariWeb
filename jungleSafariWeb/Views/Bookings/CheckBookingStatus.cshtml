@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "CheckBookingStatus";
+}
+<h2 style="margin-top:200px" class="container body-content text-center font-weight-bold bg-light">Check Booking Status</h2>
+
+<div class="container body-content text-center align-content-center bg-light">
+
+
+
+    @using (Html.BeginForm(actionName: "BookingStatus", controllerName: "Bookings", method: FormMethod.Get))
+    {
+        <p>Enter Booking ID:</p>
+        <input type="number" id="id" name="id" placeholder="enter Booking Id" />
+        <input type="submit" value="submit" />
+
+    }
+</div>

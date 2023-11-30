@@ -1,0 +1,74 @@
+﻿@model IEnumerable<jungleSafariWeb.ViewModel.BookingStatusView>
+
+@{
+    ViewBag.Title = "BookingsList";
+}
+
+<h2 style="margin-top:30px" class="container body-content text-center font-weight-bold bg-light">Booking List</h2>
+
+<div class="container body-content bg-light">
+
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SafariName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SafariDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SafariTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VType)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SafariName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SafariDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SafariTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VType)
+                </td>
+                <td>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

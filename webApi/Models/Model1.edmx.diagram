@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b278219d274d4f15887a7c4126fb62fc" Name="Diagram1">
+        <EntityTypeShape EntityType="JungleSafariModel.Booking" Width="1.5" PointX="5.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JungleSafariModel.Gate" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JungleSafariModel.Park" Width="1.5" PointX="0.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="JungleSafariModel.Role" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JungleSafariModel.SafariDetail" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="JungleSafariModel.sysdiagram" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="JungleSafariModel.Tourist" Width="1.5" PointX="7.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="JungleSafariModel.User" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="JungleSafariModel.Vehicle" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <AssociationConnector Association="JungleSafariModel.FK__Booking__GateId__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="JungleSafariModel.FK__Booking__PId__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="JungleSafariModel.FK__Booking__SafariI__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="JungleSafariModel.FK__Booking__Vehicle__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="JungleSafariModel.FK__Tourist__Booking__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="JungleSafariModel.FK_ParkID" ManuallyRouted="false" />
+        <AssociationConnector Association="JungleSafariModel.FK__SafariDet__ParkI__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="JungleSafariModel.FK__Vehicle__ParkId__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="JungleSafariModel.FK__Users__RoleId__4D94879B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

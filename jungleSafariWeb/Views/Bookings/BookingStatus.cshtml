@@ -1,0 +1,83 @@
+﻿@model jungleSafariWeb.ViewModel.BookingStatusView
+
+@{
+    ViewBag.Title = "BookingStatusView";
+}
+<h2 style="margin-top:30px" class="container body-content text-center font-weight-bold bg-light">Booking Status</h2>
+
+<div class="container body-content bg-light">
+
+
+    <div>
+        <h4>Booking</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Id)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SafariName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SafariName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SafariDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SafariDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SafariName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SafariTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Location)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.VType)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VType)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalCost)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Back to List", "BookSafari")
+    </p>
+</div>

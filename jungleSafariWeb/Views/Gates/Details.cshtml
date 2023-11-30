@@ -1,0 +1,36 @@
+﻿@model jungleSafariWeb.ViewModel.GateView
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="margin-top:50px" class="container body-content text-center font-weight-bold bg-light">Gate Details</h2>
+
+<div class="container body-content bg-light">
+    <div>
+        <h4>Gate</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.GateId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GateId)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.GateId }) |
+        @Html.ActionLink("Back to GateList", "IndexUp", new { id = Model.ParkId })
+    </p>
+</div>

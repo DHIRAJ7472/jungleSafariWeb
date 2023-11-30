@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Booking";
+}
+<h2 style="margin-top:180px" class="container body-content text-center font-weight-bold bg-light">Enter Details of @ViewBag.NoOfTourist Tourist</h2>
+
+<div class="container body-content text-center align-content-center bg-light">
+
+    @if (Model == null)
+    {
+        using (Html.BeginForm(actionName: "Tourist", controllerName: "Bookings", method: FormMethod.Get))
+        {
+            <div>
+                <p>Enter Number of Tourist:</p>
+                <input type="number" id="NoOfTourist" name="NoOfTourist" placeholder="number of tourist" />
+
+                <input type="hidden" id="BookingNo" name="BookingNo" value=@ViewBag.BookingId />
+                <input type="submit" value="submit" />
+            </div>
+
+
+        }
+
+    }
+
+
+</div>

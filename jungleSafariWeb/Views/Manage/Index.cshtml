@@ -1,0 +1,79 @@
+﻿@model IEnumerable<jungleSafariWeb.ViewModel.SafariDetailView>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2 style="margin-top:180px" class="container body-content text-center font-weight-bold bg-light">Safari List</h2>
+
+<div class="container body-content bg-light">
+    @if (User.Identity.IsAuthenticated)
+    {
+        if (Request.Cookies["rolename"].Value == "Admin")
+        {
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+
+        }
+
+
+    }
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SafariName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SafariDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SafariTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SafariCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SafariName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SafariDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SafariTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SafariCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    if (Response.Cookies["rolename"].Value == "Admin")
+                    {
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.SafariId }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.SafariId }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.SafariId })
+                        </td>
+
+                    }
+
+
+                }
+
+            </tr>
+        }
+
+    </table>
+</div>

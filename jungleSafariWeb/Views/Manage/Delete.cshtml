@@ -1,0 +1,67 @@
+﻿@model jungleSafariWeb.ViewModel.SafariDetailView
+
+@{
+    ViewBag.Title = "Delete";
+}
+<h2 style="margin-top:150px" class="container body-content text-center font-weight-bold bg-light">Delete Safari</h2>
+
+<div class="container body-content bg-light">
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>SafariDetail</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SafariName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SafariName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SafariDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SafariDate)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SafariTime)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SafariTime)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SafariCost)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SafariCost)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default" />
+        @Html.ActionLink("Back to GateList", "IndexUp", new { id = Model.ParkId })
+    </div>
+        }
+    </div>
+</div>

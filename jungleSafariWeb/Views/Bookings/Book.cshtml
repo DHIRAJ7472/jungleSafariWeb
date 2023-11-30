@@ -1,0 +1,176 @@
+﻿@using jungleSafariWeb.ViewModel
+
+
+@model ParkVehicleGate
+
+@{
+    ViewBag.Title = "Book";
+}
+<h2 style="margin-top:10px" class="container body-content text-center font-weight-bold bg-light">BookSafari</h2>
+<div class="container body-content bg-light">
+    @*d-flex justify-content-around*@
+    @if (Model != null)
+    {
+        <h6 style="margin-top:1px" class="text-left font-weight-light bg-light d-inline-flex">Available  Vehicle: &nbsp; </h6>
+        <div class="d-inline-flex">
+
+
+            <table border="1" class="table">
+                <tr>
+
+                    @*<th>
+                            Vehical Id
+                        </th>*@
+
+                    <th>
+                        Vehical Name
+                    </th>
+                    <th>
+                        Vehicle Type
+                    </th>
+                    <th>
+                        Capacity
+                    </th>
+                    <th>
+                        Vehicle Cost
+                    </th>
+                    @*<th></th>*@
+                </tr>
+
+                @foreach (var item in Model.Vehicles)
+                {
+                    <tr>
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.VId)
+                            </td>*@
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Capacity)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EntryCost)
+                        </td>
+                        @*<td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.VId }) |
+
+                            </td>*@
+                    </tr>
+                }
+
+            </table>
+        </div>
+
+
+
+        <h6 style="margin-top:2px" class="text-left font-weight-light bg-light d-inline-flex">&nbsp;&nbsp; &nbsp;Available Gates:&nbsp; </h6>
+        <div class="d-inline-flex">
+
+            <table border="1" class="table">
+
+                <tr>
+                    @*<th>
+                            Gate Id
+                        </th>*@
+                    <th>
+                        Gate Name
+                    </th>
+                </tr>
+
+                @foreach (var item in Model.Gates)
+                {
+                    <tr>
+
+                        @*<td>
+                                @Html.DisplayFor(modelItem => item.GateId)
+                            </td>*@
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+
+                    </tr>
+                }
+
+            </table>
+        </div>
+    }
+</div>
+<div class="form-row container body-content bg-light">
+
+    @using (Html.BeginForm(method: FormMethod.Post, controllerName: "Bookings", actionName: "Booking"))
+    {
+        <div class="form-group">
+            <label>Safari Choosen:</label>
+            <input type="text" readonly class="form-control" value=@ViewBag.SafariName>
+        </div>
+        <div class="form-group">
+            <label>Park Choosen:</label>
+            <input type="text" readonly class="form-control" value=@ViewBag.ParkName>
+        </div>
+        <div class="form-group">
+            <label>Location:</label>
+            <input type="text" readonly class="form-control" value=@ViewBag.Location>
+        </div>
+
+
+
+        <div class="form-group">
+            @*<label>Safari Id:</label>*@
+            <input type="hidden" readonly class="form-control" id="SafariId" name="SafariId" value=@ViewBag.SafariId>
+        </div>
+        <div class="form-group">
+            @*<label>Park Id:</label>*@
+            <input type="hidden" readonly class="form-control" id="ParkId" name="ParkId" value=@ViewBag.ParkId>
+        </div>
+
+        <div class="form-group">
+            <label for="GateId">Choose a Gate:</label>
+            <select class="form-control" id="GateId" name="GateId">
+                @foreach (var i in ViewBag.GateIdList)
+                {
+                    <option value=@i.GateId>@i.Name</option>
+
+                }
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="VehicleId">Choose a Vehicle:</label>
+            <select class="form-control" id="VehicleId" name="VehicleId">
+                @foreach (var i in ViewBag.VIdList)
+                {
+                    <option value=@i.VId>@i.VType</option>
+
+                }
+
+            </select>
+        </div>
+
+        @*<div class="form-group">
+                <label>Enter Gate ID:</label>
+                <input type="number" class="form-control" id="GateId" name="GateId">
+
+            </div>
+            <div class="form-group">
+                <label>Enter Vehicle Id:</label>
+                <input type="number" class="form-control" id="VehicleId" name="VehicleId">
+
+            </div>*@
+        <p>
+            <input type="submit" value="Submit" />
+        </p>
+    }
+
+</div>
+
+
+
+
+
+
+

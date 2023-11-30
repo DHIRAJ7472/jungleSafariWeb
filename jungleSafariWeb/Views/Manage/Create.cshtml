@@ -1,0 +1,78 @@
+﻿@model jungleSafariWeb.ViewModel.SafariDetailView
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="margin-top:10px" class="container body-content text-center font-weight-bold bg-light">Create Safari</h2>
+
+<div class="container body-content bg-light">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>SafariDetail</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.SafariName, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SafariName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SafariName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SafariDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SafariDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SafariDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SafariTime, "SafariTime", htmlAttributes: new { @class = "control-label col-md-2" })
+                @*@Html.LabelFor(model => model.SafariTime, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.SafariTime, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @*@Html.DropDownList("SafariTime", null, htmlAttributes: new { @class = "form-control" })*@
+                    @Html.DropDownListFor(model => model.SafariTime,
+                                 new List<SelectListItem> {
+                                      new SelectListItem { Value = "morning" , Text = "Morning" },
+                                      new SelectListItem { Value = "evening" , Text = "Evening" }
+                                   },
+                                 new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SafariTime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.ParkId, "ParkId", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("ParkId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ParkId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.SafariCost, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SafariCost, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SafariCost, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index", "Bookings")
+    </div>
+    </div>
