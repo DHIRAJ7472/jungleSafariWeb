@@ -215,7 +215,6 @@
     <Compile Include="Controllers\BookingsController.cs" />
     <Compile Include="Controllers\CustomController.cs" />
     <Compile Include="Controllers\CustomGatesController.cs" />
-    <Compile Include="Controllers\doSomethingController.cs" />
     <Compile Include="Controllers\GatesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
